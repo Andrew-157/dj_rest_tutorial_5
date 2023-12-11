@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_glx6^595wetxp&sux0akj0@4yrwo)kcro+dk_1xi=bmec&^7m'
+SECRET_KEY = 'django-insecure--o($mvhad@zcyocs_-89-hp3&eh0!dkaqb^rlhan5m9g89nxus'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -123,7 +123,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+# Enable Basic Authentication Scheme Globally
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
