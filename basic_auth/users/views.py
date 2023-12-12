@@ -29,17 +29,17 @@ def users(request: HttpRequest, format=None) -> Response:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# @api_view(['GET', 'PUT'])
-# @permission_classes([IsAuthenticated])
-# def me(request: Request, format=None) -> Response:
+@api_view(['GET', 'PUT'])
+@permission_classes([IsAuthenticated])
+def me(request: Request, format=None) -> Response:
 
-#     if request.method == 'GET':
-#         serializer = UserSerializer(instance=request.user)
-#         return Response(serializer.data)
+    if request.method == 'GET':
+        serializer = UserSerializer(instance=request.user)
+        return Response(serializer.data)
 
-#     elif request.method == 'PUT':
-#         serializer = UserSerializer(request.user, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(data=serializer.data)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'PUT':
+        serializer = UserSerializer(request.user, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(data=serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
